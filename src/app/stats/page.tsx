@@ -1,14 +1,34 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { rooms, getAllItems, ACTION_CONFIG } from "@/data/rooms";
+import { rooms, getAllItems, ACTION_CONFIG, getItemText } from "@/data/rooms";
 import { useItemActions, useBags, type ItemAction } from "@/hooks/useLocalStorage";
 
 const ACTION_ORDER: ItemAction[] = ["trash", "donate", "keep", "skip"];
 
+function formatDate(iso: string): string {
+  const d = new Date(iso);
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+
+function timeAgo(iso: string): string {
+  const now = Date.now();
+  const then = new Date(iso).getTime();
+  const diff = now - then;
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1) return "Just now";
+  if (mins < 60) return `${mins}m ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs}h ago`;
+  const days = Math.floor(hrs / 24);
+  if (days === 1) return "Yesterday";
+  if (days < 7) return `${days}d ago`;
+  return formatDate(iso);
+}
+
 export default function StatsPage() {
   const router = useRouter();
-  const { actions, actionCounts, resetAll, loaded } = useItemActions();
+  const { actions, actionCounts, getStartDate, getRecentActions, resetAll, loaded } = useItemActions();
   const { bags, updateBags, loaded: bagsLoaded } = useBags();
 
   if (!loaded || !bagsLoaded) {
@@ -24,13 +44,24 @@ export default function StatsPage() {
   const totalActioned = Object.keys(actions).length;
   const overallPct = totalItems > 0 ? Math.round((totalActioned / totalItems) * 100) : 0;
   const counts = actionCounts();
+  const startDate = getStartDate();
+  const recentActions = getRecentActions(8);
 
   const roomStats = Object.keys(rooms).map((roomId) => {
     const items = getAllItems(roomId);
     const actioned = items.filter((i) => i.id in actions).length;
     const total = items.length;
     const pct = total > 0 ? Math.round((actioned / total) * 100) : 0;
-    return { roomId, name: rooms[roomId].name, icon: rooms[roomId].icon, actioned, total, pct };
+    // Find last action date for this room
+    let lastDate: string | null = null;
+    if (pct === 100) {
+      const dates = items
+        .map((i) => actions[i.id]?.date)
+        .filter(Boolean) as string[];
+      dates.sort();
+      lastDate = dates[dates.length - 1] || null;
+    }
+    return { roomId, name: rooms[roomId].name, icon: rooms[roomId].icon, actioned, total, pct, lastDate };
   });
 
   return (
@@ -55,6 +86,9 @@ export default function StatsPage() {
         <div className="text-4xl font-bold text-white tabular-nums">{overallPct}%</div>
         <div className="text-sm text-gray-400 mt-1">Overall Progress</div>
         <div className="text-xs text-gray-500 mt-0.5">{totalActioned} of {totalItems} items reviewed</div>
+        {startDate && (
+          <div className="text-xs text-gray-500 mt-1">Started {formatDate(startDate)}</div>
+        )}
         <div className="w-full bg-gray-700 dark:bg-white/10 rounded-full h-1.5 mt-4">
           <div className="h-1.5 rounded-full bg-white transition-all duration-500" style={{ width: `${overallPct}%` }} />
         </div>
@@ -74,6 +108,35 @@ export default function StatsPage() {
           );
         })}
       </div>
+
+      {/* Recent Activity */}
+      {recentActions.length > 0 && (
+        <>
+          <h2 className="text-[11px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3">Recent Activity</h2>
+          <div className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl mb-6 divide-y divide-gray-100 dark:divide-white/5">
+            {recentActions.map((entry) => {
+              const config = ACTION_CONFIG[entry.action];
+              const text = getItemText(entry.id);
+              return (
+                <div key={entry.id} className="flex items-center gap-3 px-4 py-3">
+                  <div
+                    className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-white text-[10px]"
+                    style={{ backgroundColor: config.hex }}
+                  >
+                    {config.icon}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[13px] text-gray-800 dark:text-gray-200 truncate">{text}</div>
+                    <div className="text-[11px] text-gray-400 dark:text-gray-500">
+                      {config.label} · {timeAgo(entry.date)}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      )}
 
       {/* Room Progress */}
       <h2 className="text-[11px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3">Room Progress</h2>
@@ -95,7 +158,12 @@ export default function StatsPage() {
                 style={{ width: `${rs.pct}%` }}
               />
             </div>
-            <div className="text-[11px] text-gray-400 dark:text-gray-500 mt-1.5 tabular-nums">{rs.actioned}/{rs.total} items</div>
+            <div className="flex items-center justify-between mt-1.5">
+              <div className="text-[11px] text-gray-400 dark:text-gray-500 tabular-nums">{rs.actioned}/{rs.total} items</div>
+              {rs.pct === 100 && rs.lastDate && (
+                <div className="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium">Completed {formatDate(rs.lastDate)}</div>
+              )}
+            </div>
           </div>
         ))}
       </div>

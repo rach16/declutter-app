@@ -877,3 +877,15 @@ export function getAllItems(roomId: string): Item[] {
 export function getTotalItemCount(): number {
   return Object.keys(rooms).reduce((total, roomId) => total + getAllItems(roomId).length, 0);
 }
+
+// Lookup item text by ID across all rooms
+const _itemTextCache: Record<string, string> = {};
+export function getItemText(id: string): string {
+  if (_itemTextCache[id]) return _itemTextCache[id];
+  for (const roomId of Object.keys(rooms)) {
+    for (const item of getAllItems(roomId)) {
+      _itemTextCache[item.id] = item.text;
+    }
+  }
+  return _itemTextCache[id] || id;
+}

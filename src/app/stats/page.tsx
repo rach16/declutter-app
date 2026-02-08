@@ -28,7 +28,7 @@ function timeAgo(iso: string): string {
 
 export default function StatsPage() {
   const router = useRouter();
-  const { actions, actionCounts, getStartDate, getRecentActions, resetAll, loaded } = useItemActions();
+  const { actions, actionCounts, getStartDate, getRecentActions, clearItemAction, resetAll, loaded } = useItemActions();
   const { bags, updateBags, loaded: bagsLoaded } = useBags();
 
   if (!loaded || !bagsLoaded) {
@@ -131,6 +131,15 @@ export default function StatsPage() {
                       {config.label} · {timeAgo(entry.date)}
                     </div>
                   </div>
+                  <button
+                    onClick={() => clearItemAction(entry.id)}
+                    className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-gray-300 dark:text-gray-600 hover:text-red-500 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors"
+                    title="Undo"
+                  >
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
                 </div>
               );
             })}

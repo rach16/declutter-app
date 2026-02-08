@@ -349,6 +349,34 @@ export const rooms: Rooms = {
           },
         ],
       },
+      {
+        name: "Under the Bed",
+        subsections: [
+          {
+            name: "Storage Containers",
+            items: [
+              { id: "bed-underbed-1", text: "Unlabeled boxes you haven't opened in a year", color: "orange" },
+              { id: "bed-underbed-2", text: "Broken storage bins (cracked lids, warped)", color: "red" },
+              { id: "bed-underbed-3", text: "Storage containers with items you forgot about", color: "orange" },
+              { id: "bed-underbed-4", text: "Seasonal clothes in labeled bins", color: "green" },
+              { id: "bed-underbed-5", text: "Extra bedding in sealed bags", color: "green" },
+            ],
+          },
+          {
+            name: "Random Items",
+            items: [
+              { id: "bed-underbed-6", text: "Dust bunnies and lost items (clean it out!)", color: "red" },
+              { id: "bed-underbed-7", text: "Old magazines and newspapers", color: "red" },
+              { id: "bed-underbed-8", text: "Single shoes or slippers (missing pair)", color: "red" },
+              { id: "bed-underbed-9", text: "Old gift bags and wrapping paper (wrinkled)", color: "red" },
+              { id: "bed-underbed-10", text: "Exercise equipment you never use", color: "blue" },
+              { id: "bed-underbed-11", text: "Books you've already read", color: "blue" },
+              { id: "bed-underbed-12", text: "Old electronics and chargers", color: "orange" },
+              { id: "bed-underbed-13", text: "Luggage you use for travel", color: "green" },
+            ],
+          },
+        ],
+      },
     ],
   },
   bathroom: {
@@ -579,6 +607,37 @@ export const rooms: Rooms = {
               { id: "bath-sample-4", text: "Samples you've been 'saving'", color: "orange" },
               { id: "bath-sample-5", text: "Too many samples (pick 5-10 to keep)", color: "orange" },
               { id: "bath-sample-6", text: "Travel sizes you'll actually travel with", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Bathroom Cabinets & Under Sink",
+        subsections: [
+          {
+            name: "Under Vanity / Sink Cabinet",
+            items: [
+              { id: "bath-cab-1", text: "Leaking or rusty products under sink", color: "red" },
+              { id: "bath-cab-2", text: "Dried-up cleaning products", color: "red" },
+              { id: "bath-cab-3", text: "Old sponges and rags", color: "red" },
+              { id: "bath-cab-4", text: "Unused feminine hygiene products (expired)", color: "orange" },
+              { id: "bath-cab-5", text: "Backup products you already have too many of", color: "orange" },
+              { id: "bath-cab-6", text: "Cleaning supplies you never use", color: "blue" },
+              { id: "bath-cab-7", text: "Toilet bowl cleaner and bathroom spray", color: "green" },
+              { id: "bath-cab-8", text: "Backup toilet paper and tissue", color: "green" },
+            ],
+          },
+          {
+            name: "Linen / Storage Cabinet",
+            items: [
+              { id: "bath-cab-9", text: "Towels that are stained or threadbare", color: "red" },
+              { id: "bath-cab-10", text: "Old bathmats (worn, stained, curling)", color: "red" },
+              { id: "bath-cab-11", text: "Empty product bottles taking up space", color: "red" },
+              { id: "bath-cab-12", text: "Hot tools you never use (old curling iron)", color: "blue" },
+              { id: "bath-cab-13", text: "Gift sets still in packaging from years ago", color: "orange" },
+              { id: "bath-cab-14", text: "Too many candles (keep a few favorites)", color: "orange" },
+              { id: "bath-cab-15", text: "Neatly folded fresh towels", color: "green" },
+              { id: "bath-cab-16", text: "First aid kit (check expiration dates)", color: "green" },
             ],
           },
         ],
@@ -860,6 +919,420 @@ export const rooms: Rooms = {
               { id: "kit-junk-8", text: "Broken items", color: "red" },
               { id: "kit-junk-9", text: "Working flashlight with batteries", color: "green" },
               { id: "kit-junk-10", text: "Tape, scissors, notepad, working pens", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Kitchen Cabinets",
+        subsections: [
+          {
+            name: "Upper Cabinets",
+            items: [
+              { id: "kit-ucab-1", text: "Chipped or cracked dishes pushed to the back", color: "red" },
+              { id: "kit-ucab-2", text: "Mismatched glasses you never use", color: "blue" },
+              { id: "kit-ucab-3", text: "Novelty mugs and promotional cups", color: "blue" },
+              { id: "kit-ucab-4", text: "Expired spices tucked behind others", color: "red" },
+              { id: "kit-ucab-5", text: "Plastic cups from takeout you saved", color: "red" },
+              { id: "kit-ucab-6", text: "Wine glasses for 20 when you host 4", color: "orange" },
+              { id: "kit-ucab-7", text: "Vases you never put flowers in", color: "blue" },
+              { id: "kit-ucab-8", text: "Travel mugs with broken lids", color: "red" },
+              { id: "kit-ucab-9", text: "Baby dishes/cups if kids are older", color: "blue" },
+              { id: "kit-ucab-10", text: "Your everyday plates, bowls, and glasses", color: "green" },
+            ],
+          },
+          {
+            name: "Lower Cabinets",
+            items: [
+              { id: "kit-lcab-1", text: "Pots and pans you never cook with", color: "blue" },
+              { id: "kit-lcab-2", text: "Rusted baking sheets and muffin tins", color: "red" },
+              { id: "kit-lcab-3", text: "Lids that don't match anything", color: "red" },
+              { id: "kit-lcab-4", text: "Duplicate casserole dishes", color: "orange" },
+              { id: "kit-lcab-5", text: "Appliances stored here that you forgot about", color: "blue" },
+              { id: "kit-lcab-6", text: "Plastic containers avalanche (mismatched)", color: "orange" },
+              { id: "kit-lcab-7", text: "Heavy serving platters used once a year", color: "orange" },
+              { id: "kit-lcab-8", text: "Reusable bags (keep 5-10, recycle rest)", color: "orange" },
+              { id: "kit-lcab-9", text: "Pots and pans you use weekly", color: "green" },
+              { id: "kit-lcab-10", text: "Neatly stacked containers with matching lids", color: "green" },
+            ],
+          },
+          {
+            name: "Lazy Susan & Corner Cabinets",
+            items: [
+              { id: "kit-corner-1", text: "Expired items hiding in the back", color: "red" },
+              { id: "kit-corner-2", text: "Duplicate oils and vinegars", color: "orange" },
+              { id: "kit-corner-3", text: "Specialty ingredients bought for one recipe", color: "orange" },
+              { id: "kit-corner-4", text: "Open packages of stale snacks", color: "red" },
+              { id: "kit-corner-5", text: "Items you can't identify anymore", color: "red" },
+              { id: "kit-corner-6", text: "Pantry staples you use regularly", color: "green" },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  livingroom: {
+    name: "Living Room",
+    icon: "\u{1F6CB}\uFE0F",
+    sections: [
+      {
+        name: "Entertainment & Electronics",
+        subsections: [
+          {
+            name: "TV & Media",
+            items: [
+              { id: "lr-tv-1", text: "DVDs and Blu-rays you'll never rewatch", color: "blue" },
+              { id: "lr-tv-2", text: "VHS tapes (if you don't have a player)", color: "red" },
+              { id: "lr-tv-3", text: "Old streaming devices (replaced by newer ones)", color: "red" },
+              { id: "lr-tv-4", text: "Remote controls for devices you don't own", color: "red" },
+              { id: "lr-tv-5", text: "Tangled cables behind the TV", color: "orange" },
+              { id: "lr-tv-6", text: "Video games you've finished or won't play", color: "blue" },
+              { id: "lr-tv-7", text: "Old gaming consoles collecting dust", color: "blue" },
+              { id: "lr-tv-8", text: "CD collection (if you only stream now)", color: "orange" },
+              { id: "lr-tv-9", text: "Current TV, streaming device, and speaker", color: "green" },
+              { id: "lr-tv-10", text: "Gaming setup you actively use", color: "green" },
+            ],
+          },
+          {
+            name: "Cables & Chargers",
+            items: [
+              { id: "lr-cable-1", text: "Unidentified chargers and adapters", color: "orange" },
+              { id: "lr-cable-2", text: "Frayed or broken cables", color: "red" },
+              { id: "lr-cable-3", text: "Micro-USB cables (if all devices are USB-C)", color: "red" },
+              { id: "lr-cable-4", text: "Duplicate HDMI cables (keep 1-2 spare)", color: "orange" },
+              { id: "lr-cable-5", text: "Phone chargers for phones you no longer own", color: "red" },
+              { id: "lr-cable-6", text: "Chargers and cables you use daily", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Bookshelves & Display",
+        subsections: [
+          {
+            name: "Books",
+            items: [
+              { id: "lr-book-1", text: "Books you read and won't read again", color: "blue" },
+              { id: "lr-book-2", text: "Books you started and never finished (be honest)", color: "orange" },
+              { id: "lr-book-3", text: "Outdated reference books (old travel guides, tech books)", color: "red" },
+              { id: "lr-book-4", text: "Textbooks from school you'll never open", color: "blue" },
+              { id: "lr-book-5", text: "Duplicate copies", color: "blue" },
+              { id: "lr-book-6", text: "Water-damaged or moldy books", color: "red" },
+              { id: "lr-book-7", text: "Coffee table books you never look at", color: "orange" },
+              { id: "lr-book-8", text: "Books you love and reread", color: "green" },
+              { id: "lr-book-9", text: "Books on your 'to read' list (be realistic)", color: "orange" },
+              { id: "lr-book-10", text: "Reference books you actually reference", color: "green" },
+            ],
+          },
+          {
+            name: "Decor & Display Items",
+            items: [
+              { id: "lr-decor-1", text: "Dusty artificial flowers/plants", color: "red" },
+              { id: "lr-decor-2", text: "Knick-knacks that just collect dust", color: "orange" },
+              { id: "lr-decor-3", text: "Souvenirs from trips you don't care about", color: "blue" },
+              { id: "lr-decor-4", text: "Candles that are burned down or dusty", color: "red" },
+              { id: "lr-decor-5", text: "Picture frames with no photos in them", color: "red" },
+              { id: "lr-decor-6", text: "Decor that doesn't match your style anymore", color: "blue" },
+              { id: "lr-decor-7", text: "Awards/trophies from decades ago", color: "orange" },
+              { id: "lr-decor-8", text: "Photos and art you love looking at", color: "green" },
+              { id: "lr-decor-9", text: "Meaningful decor that brings you joy", color: "green" },
+            ],
+          },
+          {
+            name: "Magazines & Papers",
+            items: [
+              { id: "lr-mag-1", text: "Magazines older than 3 months", color: "red" },
+              { id: "lr-mag-2", text: "Newspapers (recycle daily!)", color: "red" },
+              { id: "lr-mag-3", text: "Catalogs you never ordered from", color: "red" },
+              { id: "lr-mag-4", text: "Junk mail piling up", color: "red" },
+              { id: "lr-mag-5", text: "Takeout menus (use apps instead)", color: "red" },
+              { id: "lr-mag-6", text: "Current magazine you're reading", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Furniture Surfaces",
+        subsections: [
+          {
+            name: "Coffee Table & Side Tables",
+            items: [
+              { id: "lr-table-1", text: "Random receipts and papers", color: "red" },
+              { id: "lr-table-2", text: "Old coasters (stained, cracked)", color: "red" },
+              { id: "lr-table-3", text: "Dead batteries from remotes", color: "red" },
+              { id: "lr-table-4", text: "Random small items that accumulated", color: "orange" },
+              { id: "lr-table-5", text: "Empty snack wrappers or cups", color: "red" },
+              { id: "lr-table-6", text: "Items that belong in other rooms", color: "orange" },
+              { id: "lr-table-7", text: "Remote controls you actually use", color: "green" },
+              { id: "lr-table-8", text: "A coaster set in good condition", color: "green" },
+            ],
+          },
+          {
+            name: "Couch & Seating Area",
+            items: [
+              { id: "lr-couch-1", text: "Throw pillows that are flat or stained", color: "red" },
+              { id: "lr-couch-2", text: "Throw blankets with holes or pilling", color: "red" },
+              { id: "lr-couch-3", text: "Too many throw pillows (keep 2-4)", color: "orange" },
+              { id: "lr-couch-4", text: "Coins and crumbs in cushions (clean it!)", color: "orange" },
+              { id: "lr-couch-5", text: "Slipcovers that don't fit well", color: "orange" },
+              { id: "lr-couch-6", text: "Your favorite throw blanket", color: "green" },
+              { id: "lr-couch-7", text: "Comfortable throw pillows you use", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Storage & Miscellaneous",
+        subsections: [
+          {
+            name: "Board Games & Toys",
+            items: [
+              { id: "lr-game-1", text: "Board games with missing pieces", color: "red" },
+              { id: "lr-game-2", text: "Card games with missing cards", color: "red" },
+              { id: "lr-game-3", text: "Puzzles with missing pieces", color: "red" },
+              { id: "lr-game-4", text: "Games you never play", color: "blue" },
+              { id: "lr-game-5", text: "Kids' toys they've outgrown", color: "blue" },
+              { id: "lr-game-6", text: "Games you play regularly", color: "green" },
+            ],
+          },
+          {
+            name: "Baskets & Storage Bins",
+            items: [
+              { id: "lr-basket-1", text: "Baskets full of random 'stuff'", color: "orange" },
+              { id: "lr-basket-2", text: "Broken or fraying baskets", color: "red" },
+              { id: "lr-basket-3", text: "Storage bins you haven't opened in a year", color: "orange" },
+              { id: "lr-basket-4", text: "Old pet toys (worn, dirty)", color: "red" },
+              { id: "lr-basket-5", text: "Organized storage that makes sense", color: "green" },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  closet: {
+    name: "Hall / Linen Closet",
+    icon: "\u{1F6AA}",
+    sections: [
+      {
+        name: "Coats & Outerwear",
+        subsections: [
+          {
+            name: "Jackets, Coats & Accessories",
+            items: [
+              { id: "cl-coat-1", text: "Coats no one has worn in 2+ years", color: "blue" },
+              { id: "cl-coat-2", text: "Jackets with broken zippers", color: "red" },
+              { id: "cl-coat-3", text: "Kids' coats they've outgrown", color: "blue" },
+              { id: "cl-coat-4", text: "Stained or torn raincoats", color: "red" },
+              { id: "cl-coat-5", text: "Guest jackets (do guests actually use them?)", color: "orange" },
+              { id: "cl-coat-6", text: "Hats and gloves with no match", color: "red" },
+              { id: "cl-coat-7", text: "Scarves you never wear", color: "blue" },
+              { id: "cl-coat-8", text: "Umbrellas that are broken", color: "red" },
+              { id: "cl-coat-9", text: "Too many umbrellas (keep 2-3)", color: "orange" },
+              { id: "cl-coat-10", text: "Your go-to coats for each season", color: "green" },
+              { id: "cl-coat-11", text: "One good umbrella per person", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Linens & Towels",
+        subsections: [
+          {
+            name: "Bed Linens",
+            items: [
+              { id: "cl-linen-1", text: "Sheets for bed sizes you no longer own", color: "blue" },
+              { id: "cl-linen-2", text: "Stained or threadbare spare sheets", color: "red" },
+              { id: "cl-linen-3", text: "Pillow cases without matching sets", color: "orange" },
+              { id: "cl-linen-4", text: "Too many sets (2-3 per bed is enough)", color: "orange" },
+              { id: "cl-linen-5", text: "Complete, fresh spare sheet sets", color: "green" },
+            ],
+          },
+          {
+            name: "Towels & Washcloths",
+            items: [
+              { id: "cl-towel-1", text: "Stained towels downgraded to 'rags'", color: "red" },
+              { id: "cl-towel-2", text: "Threadbare towels", color: "red" },
+              { id: "cl-towel-3", text: "Musty-smelling towels", color: "red" },
+              { id: "cl-towel-4", text: "Beach towels (keep 1-2 per person)", color: "orange" },
+              { id: "cl-towel-5", text: "Too many hand towels", color: "orange" },
+              { id: "cl-towel-6", text: "Fresh guest towels (2-3 sets)", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Cleaning & Household",
+        subsections: [
+          {
+            name: "Cleaning Supplies",
+            items: [
+              { id: "cl-clean-1", text: "Dried-up cleaning products", color: "red" },
+              { id: "cl-clean-2", text: "Cleaning products you never use", color: "blue" },
+              { id: "cl-clean-3", text: "Duplicate products (consolidate)", color: "orange" },
+              { id: "cl-clean-4", text: "Old mop heads and broom (worn out)", color: "red" },
+              { id: "cl-clean-5", text: "Vacuum bags for a vacuum you replaced", color: "red" },
+              { id: "cl-clean-6", text: "Cleaning supplies you use weekly", color: "green" },
+              { id: "cl-clean-7", text: "Vacuum and mop in working condition", color: "green" },
+            ],
+          },
+          {
+            name: "Household Supplies",
+            items: [
+              { id: "cl-house-1", text: "Light bulbs for fixtures you don't have", color: "red" },
+              { id: "cl-house-2", text: "Old paint cans (dried up or wrong color)", color: "orange" },
+              { id: "cl-house-3", text: "Expired batteries", color: "red" },
+              { id: "cl-house-4", text: "Random hardware (screws, nails, hooks)", color: "orange" },
+              { id: "cl-house-5", text: "Tools you never use", color: "blue" },
+              { id: "cl-house-6", text: "Basic toolkit and fresh batteries", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Seasonal & Storage",
+        subsections: [
+          {
+            name: "Seasonal Items",
+            items: [
+              { id: "cl-season-1", text: "Holiday decorations you never put up", color: "blue" },
+              { id: "cl-season-2", text: "Broken ornaments or lights", color: "red" },
+              { id: "cl-season-3", text: "Decorations for holidays you don't celebrate", color: "blue" },
+              { id: "cl-season-4", text: "Wrapping paper that's torn or wrinkled", color: "red" },
+              { id: "cl-season-5", text: "Gift bags that are worn (keep 5-10 good ones)", color: "orange" },
+              { id: "cl-season-6", text: "Holiday decorations you love", color: "green" },
+              { id: "cl-season-7", text: "Good wrapping supplies", color: "green" },
+            ],
+          },
+          {
+            name: "Miscellaneous Storage",
+            items: [
+              { id: "cl-misc-1", text: "Boxes from items you bought (warranty expired)", color: "red" },
+              { id: "cl-misc-2", text: "Shopping bags you'll never reuse", color: "red" },
+              { id: "cl-misc-3", text: "Luggage with broken wheels or zippers", color: "red" },
+              { id: "cl-misc-4", text: "Sports equipment no one uses", color: "blue" },
+              { id: "cl-misc-5", text: "Board games shoved in here", color: "orange" },
+              { id: "cl-misc-6", text: "Reusable shopping bags (keep 5-10)", color: "orange" },
+              { id: "cl-misc-7", text: "Working luggage set", color: "green" },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  study: {
+    name: "Study / Office",
+    icon: "\u{1F4DA}",
+    sections: [
+      {
+        name: "Desk Surface",
+        subsections: [
+          {
+            name: "Desktop Clutter",
+            items: [
+              { id: "st-desk-1", text: "Sticky notes that are no longer relevant", color: "red" },
+              { id: "st-desk-2", text: "Pens and markers that are dried up", color: "red" },
+              { id: "st-desk-3", text: "Random papers and receipts", color: "red" },
+              { id: "st-desk-4", text: "Business cards you'll never contact", color: "red" },
+              { id: "st-desk-5", text: "Old to-do lists (already done or abandoned)", color: "red" },
+              { id: "st-desk-6", text: "Trinkets and fidget toys you don't use", color: "orange" },
+              { id: "st-desk-7", text: "Cups/mugs that have been sitting there", color: "orange" },
+              { id: "st-desk-8", text: "Your daily-use pens and notepad", color: "green" },
+              { id: "st-desk-9", text: "Monitor, keyboard, and mouse", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Desk Drawers",
+        subsections: [
+          {
+            name: "Top Drawer (Everyday Items)",
+            items: [
+              { id: "st-draw-1", text: "Dried-up highlighters and markers", color: "red" },
+              { id: "st-draw-2", text: "Broken pencils and pen caps", color: "red" },
+              { id: "st-draw-3", text: "Old stamps (check if still valid)", color: "orange" },
+              { id: "st-draw-4", text: "Rubber bands that have dried out", color: "red" },
+              { id: "st-draw-5", text: "Paper clips you'll never use that many of", color: "orange" },
+              { id: "st-draw-6", text: "USB drives (check contents, then decide)", color: "orange" },
+              { id: "st-draw-7", text: "Working pens, scissors, tape, stapler", color: "green" },
+            ],
+          },
+          {
+            name: "Lower Drawers",
+            items: [
+              { id: "st-draw-8", text: "Old notebooks with a few pages used", color: "orange" },
+              { id: "st-draw-9", text: "Instruction manuals (find online instead)", color: "red" },
+              { id: "st-draw-10", text: "Old calendars and planners", color: "red" },
+              { id: "st-draw-11", text: "Spare office supplies you'll never need", color: "blue" },
+              { id: "st-draw-12", text: "Tangled cables and old chargers", color: "orange" },
+              { id: "st-draw-13", text: "Software CDs/DVDs", color: "red" },
+              { id: "st-draw-14", text: "Supplies you use regularly", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Papers & Documents",
+        subsections: [
+          {
+            name: "Active Papers",
+            items: [
+              { id: "st-paper-1", text: "Junk mail that piled up", color: "red" },
+              { id: "st-paper-2", text: "Old bank/credit card statements (shred!)", color: "red" },
+              { id: "st-paper-3", text: "Expired warranties and manuals", color: "red" },
+              { id: "st-paper-4", text: "Old tax returns beyond 7 years", color: "red" },
+              { id: "st-paper-5", text: "Receipts for items past return period", color: "red" },
+              { id: "st-paper-6", text: "Outdated insurance documents", color: "red" },
+              { id: "st-paper-7", text: "Coupons that are expired", color: "red" },
+              { id: "st-paper-8", text: "Current year tax documents", color: "green" },
+              { id: "st-paper-9", text: "Active warranties and contracts", color: "green" },
+              { id: "st-paper-10", text: "Important IDs and certificates", color: "green" },
+            ],
+          },
+          {
+            name: "Sentimental Papers",
+            items: [
+              { id: "st-sent-1", text: "Old school papers and assignments", color: "orange" },
+              { id: "st-sent-2", text: "Cards from people you don't remember", color: "orange" },
+              { id: "st-sent-3", text: "Duplicate photos (keep the best ones)", color: "orange" },
+              { id: "st-sent-4", text: "Kids' artwork (photograph then recycle most)", color: "orange" },
+              { id: "st-sent-5", text: "Meaningful letters and cards", color: "green" },
+              { id: "st-sent-6", text: "Important certificates and diplomas", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Books & Shelves",
+        subsections: [
+          {
+            name: "Study Books & References",
+            items: [
+              { id: "st-book-1", text: "Textbooks from courses you finished years ago", color: "blue" },
+              { id: "st-book-2", text: "Outdated tech/programming books", color: "red" },
+              { id: "st-book-3", text: "Self-help books you read once", color: "blue" },
+              { id: "st-book-4", text: "Books someone gave you that you'll never read", color: "blue" },
+              { id: "st-book-5", text: "Damaged or water-stained books", color: "red" },
+              { id: "st-book-6", text: "Reference books you actually use", color: "green" },
+              { id: "st-book-7", text: "Books you plan to read soon (max 5)", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Electronics & Tech",
+        subsections: [
+          {
+            name: "Devices & Accessories",
+            items: [
+              { id: "st-tech-1", text: "Old phones and tablets (wipe and recycle)", color: "orange" },
+              { id: "st-tech-2", text: "Chargers for devices you no longer own", color: "red" },
+              { id: "st-tech-3", text: "Broken headphones or earbuds", color: "red" },
+              { id: "st-tech-4", text: "Old external hard drives (back up and recycle)", color: "orange" },
+              { id: "st-tech-5", text: "Tangled cable mess (sort, test, toss dead ones)", color: "orange" },
+              { id: "st-tech-6", text: "Old webcams or mice you replaced", color: "blue" },
+              { id: "st-tech-7", text: "Printer ink for a printer you don't have", color: "red" },
+              { id: "st-tech-8", text: "Current devices and working accessories", color: "green" },
             ],
           },
         ],

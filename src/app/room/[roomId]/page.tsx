@@ -79,7 +79,7 @@ export default function RoomPage() {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen gap-3">
         <p className="text-gray-400">Room not found</p>
-        <button onClick={() => router.push("/")} className="text-sm font-medium text-gray-900 underline">
+        <button onClick={() => router.push("/")} className="text-sm font-medium text-gray-900 dark:text-gray-100 underline">
           Go Home
         </button>
       </div>
@@ -94,31 +94,31 @@ export default function RoomPage() {
   return (
     <div className="pb-8 safe-bottom">
       {/* Sticky Header */}
-      <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-gray-100 px-5 py-4">
+      <div className="sticky top-0 z-10 bg-white/95 dark:bg-[#111]/95 backdrop-blur-sm border-b border-gray-100 dark:border-white/5 px-5 py-4">
         <div className="flex items-center justify-between mb-3">
           <button
             onClick={() => router.push("/")}
-            className="flex items-center gap-1 text-sm font-medium text-gray-500"
+            className="flex items-center gap-1 text-sm font-medium text-gray-500 dark:text-gray-400"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
             Back
           </button>
-          <span className="text-xs text-gray-400 tabular-nums">{totalActioned}/{totalItems}</span>
+          <span className="text-xs text-gray-400 dark:text-gray-500 tabular-nums">{totalActioned}/{totalItems}</span>
         </div>
 
         <div className="flex items-center gap-2.5 mb-3">
           <span className="text-xl">{room.icon}</span>
-          <h1 className="text-lg font-bold text-gray-900 tracking-tight">{room.name}</h1>
-          <span className={`ml-auto text-sm font-semibold tabular-nums ${pct === 100 ? "text-emerald-600" : "text-gray-900"}`}>
+          <h1 className="text-lg font-bold text-gray-900 dark:text-gray-100 tracking-tight">{room.name}</h1>
+          <span className={`ml-auto text-sm font-semibold tabular-nums ${pct === 100 ? "text-emerald-600 dark:text-emerald-400" : "text-gray-900 dark:text-gray-100"}`}>
             {pct}%
           </span>
         </div>
 
-        <div className="w-full bg-gray-100 rounded-full h-1.5 mb-3">
+        <div className="w-full bg-gray-100 dark:bg-white/10 rounded-full h-1.5 mb-3">
           <div
-            className={`h-1.5 rounded-full transition-all duration-500 ${pct === 100 ? "bg-emerald-500" : "bg-gray-900"}`}
+            className={`h-1.5 rounded-full transition-all duration-500 ${pct === 100 ? "bg-emerald-500" : "bg-gray-900 dark:bg-white"}`}
             style={{ width: `${pct}%` }}
           />
         </div>
@@ -133,7 +133,7 @@ export default function RoomPage() {
             placeholder="Search items..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-8 pr-8 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300"
+            className="w-full pl-8 pr-8 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg text-sm text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-300 dark:focus:ring-white/20 focus:border-gray-300 dark:focus:border-white/20"
           />
           {search && (
             <button onClick={() => setSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
@@ -149,7 +149,7 @@ export default function RoomPage() {
           <button
             onClick={() => setColorFilter("all")}
             className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-colors flex-shrink-0 ${
-              colorFilter === "all" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-500"
+              colorFilter === "all" ? "bg-gray-900 dark:bg-white text-white dark:text-black" : "bg-gray-100 dark:bg-white/10 text-gray-500 dark:text-gray-400"
             }`}
           >
             All
@@ -159,7 +159,7 @@ export default function RoomPage() {
               key={color}
               onClick={() => setColorFilter(colorFilter === color ? "all" : color)}
               className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-colors flex items-center gap-1 flex-shrink-0 ${
-                colorFilter === color ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-500"
+                colorFilter === color ? "bg-gray-900 dark:bg-white text-white dark:text-black" : "bg-gray-100 dark:bg-white/10 text-gray-500 dark:text-gray-400"
               }`}
             >
               <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: COLOR_MAP[color].hex }} />
@@ -173,7 +173,7 @@ export default function RoomPage() {
       <div className="px-5 mt-4">
         {filteredRoom.sections.length === 0 ? (
           <div className="text-center py-16">
-            <p className="text-gray-400 text-sm">No items match your search.</p>
+            <p className="text-gray-400 dark:text-gray-500 text-sm">No items match your search.</p>
           </div>
         ) : (
           filteredRoom.sections.map((section) => {
@@ -191,14 +191,14 @@ export default function RoomPage() {
                 >
                   <div className="flex items-center gap-2 min-w-0">
                     <svg
-                      className={`w-3.5 h-3.5 text-gray-400 flex-shrink-0 transition-transform duration-200 ${isExpanded ? "rotate-90" : ""}`}
+                      className={`w-3.5 h-3.5 text-gray-400 dark:text-gray-500 flex-shrink-0 transition-transform duration-200 ${isExpanded ? "rotate-90" : ""}`}
                       fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                    <span className="text-[13px] font-semibold text-gray-900 truncate">{section.name}</span>
+                    <span className="text-[13px] font-semibold text-gray-900 dark:text-gray-100 truncate">{section.name}</span>
                   </div>
-                  <span className="text-[11px] text-gray-400 tabular-nums ml-2 flex-shrink-0">
+                  <span className="text-[11px] text-gray-400 dark:text-gray-500 tabular-nums ml-2 flex-shrink-0">
                     {sectionActioned}/{sectionTotal} · {sectionPct}%
                   </span>
                 </button>
@@ -218,14 +218,14 @@ export default function RoomPage() {
                           >
                             <div className="flex items-center gap-1.5">
                               <svg
-                                className={`w-3 h-3 text-gray-300 transition-transform duration-200 ${isSubExpanded ? "rotate-90" : ""}`}
+                                className={`w-3 h-3 text-gray-300 dark:text-gray-600 transition-transform duration-200 ${isSubExpanded ? "rotate-90" : ""}`}
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24"
                               >
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                               </svg>
-                              <span className="text-[13px] font-medium text-gray-600">{sub.name}</span>
+                              <span className="text-[13px] font-medium text-gray-600 dark:text-gray-300">{sub.name}</span>
                             </div>
-                            <span className="text-[11px] text-gray-400 tabular-nums">{subActioned}/{sub.items.length}</span>
+                            <span className="text-[11px] text-gray-400 dark:text-gray-500 tabular-nums">{subActioned}/{sub.items.length}</span>
                           </button>
 
                           {isSubExpanded && (
@@ -237,17 +237,15 @@ export default function RoomPage() {
 
                                 return (
                                   <div key={item.id}>
-                                    {/* Item row */}
                                     <button
                                       onClick={() => setActiveItem(isActive ? null : item.id)}
                                       className={`w-full text-left p-3 rounded-lg border transition-all ${
                                         isDone
-                                          ? "bg-gray-50 border-gray-100"
-                                          : `${COLOR_MAP[item.color].bg} border ${COLOR_MAP[item.color].border}`
+                                          ? "bg-gray-50 dark:bg-white/5 border-gray-100 dark:border-white/5"
+                                          : `bg-opacity-50 dark:bg-opacity-20 ${COLOR_MAP[item.color].bg} border ${COLOR_MAP[item.color].border} dark:border-opacity-30`
                                       }`}
                                     >
                                       <div className="flex items-start gap-2.5">
-                                        {/* Status indicator */}
                                         {isDone ? (
                                           <div
                                             className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-white text-[10px]"
@@ -262,7 +260,7 @@ export default function RoomPage() {
                                           />
                                         )}
                                         <div className="flex-1 min-w-0">
-                                          <span className={`text-[13px] leading-snug ${isDone ? "text-gray-400 line-through" : "text-gray-800"}`}>
+                                          <span className={`text-[13px] leading-snug ${isDone ? "text-gray-400 dark:text-gray-500 line-through" : "text-gray-800 dark:text-gray-200"}`}>
                                             {item.text}
                                           </span>
                                           {isDone && (
@@ -274,7 +272,6 @@ export default function RoomPage() {
                                       </div>
                                     </button>
 
-                                    {/* Action buttons - shown when item is tapped */}
                                     {isActive && (
                                       <div className="flex gap-1.5 mt-1.5 ml-7">
                                         {ACTIONS.map((action) => {
@@ -294,7 +291,7 @@ export default function RoomPage() {
                                               className={`flex-1 py-2 rounded-lg text-[11px] font-semibold transition-all border ${
                                                 isSelected
                                                   ? `${config.activeBg} text-white border-transparent`
-                                                  : `${config.bg} ${config.text}`
+                                                  : `bg-white dark:bg-white/5 border-gray-200 dark:border-white/10 ${config.text}`
                                               }`}
                                             >
                                               <span className="block text-center">

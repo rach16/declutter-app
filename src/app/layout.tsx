@@ -25,8 +25,20 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: "#6366f1",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+  ],
 };
+
+// Inline script to set dark class before paint (avoids flash)
+const darkModeScript = `
+  (function(){
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+      document.documentElement.classList.add('dark');
+    }
+  })();
+`;
 
 export default function RootLayout({
   children,
@@ -34,12 +46,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: darkModeScript }} />
         <link rel="apple-touch-icon" href="/icon-192.svg" />
       </head>
-      <body className={`${geistSans.variable} font-sans antialiased`}>
-        <main className="min-h-screen max-w-lg mx-auto bg-white shadow-sm">
+      <body className={`${geistSans.variable} font-sans antialiased bg-gray-50 text-gray-900 dark:bg-[#0a0a0a] dark:text-gray-100`}>
+        <main className="min-h-screen max-w-lg mx-auto bg-white dark:bg-[#111] shadow-sm dark:shadow-none">
           {children}
         </main>
       </body>

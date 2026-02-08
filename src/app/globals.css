@@ -2,14 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #f9fafb;
-  --foreground: #111827;
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
 }

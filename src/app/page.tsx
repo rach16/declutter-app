@@ -26,12 +26,12 @@ export default function Home() {
     <div className="px-5 py-8 safe-bottom">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Declutter</h1>
-        <p className="text-sm text-gray-400 mt-0.5">Room by room, item by item.</p>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">Declutter</h1>
+        <p className="text-sm text-gray-400 dark:text-gray-500 mt-0.5">Room by room, item by item.</p>
       </div>
 
       {/* Overall Progress */}
-      <div className="bg-gray-900 rounded-xl p-5 mb-6">
+      <div className="bg-gray-900 dark:bg-white/10 rounded-xl p-5 mb-6">
         <div className="flex items-end justify-between mb-3">
           <div>
             <div className="text-3xl font-bold text-white tabular-nums">{overallPct}%</div>
@@ -46,7 +46,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="w-full bg-gray-700 rounded-full h-1.5">
+        <div className="w-full bg-gray-700 dark:bg-white/10 rounded-full h-1.5">
           <div
             className="h-1.5 rounded-full bg-white transition-all duration-500"
             style={{ width: `${overallPct}%` }}
@@ -56,12 +56,12 @@ export default function Home() {
 
       {/* Suggestion Legend */}
       <div className="flex items-center gap-4 mb-6 px-1">
-        <span className="text-[11px] font-medium text-gray-400 uppercase tracking-wider">Suggestions</span>
+        <span className="text-[11px] font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wider">Suggestions</span>
         <div className="flex gap-3">
           {(Object.keys(COLOR_MAP) as Array<keyof typeof COLOR_MAP>).map((color) => (
             <div key={color} className="flex items-center gap-1.5">
               <div className="w-2 h-2 rounded-full" style={{ backgroundColor: COLOR_MAP[color].hex }} />
-              <span className="text-[11px] text-gray-500">{COLOR_MAP[color].label}</span>
+              <span className="text-[11px] text-gray-500 dark:text-gray-400">{COLOR_MAP[color].label}</span>
             </div>
           ))}
         </div>
@@ -78,27 +78,27 @@ export default function Home() {
 
           return (
             <Link key={roomId} href={`/room/${roomId}`} className="block group">
-              <div className="border border-gray-200 rounded-xl p-4 bg-white transition-all group-hover:border-gray-300 group-active:scale-[0.99]">
+              <div className="border border-gray-200 dark:border-white/10 rounded-xl p-4 bg-white dark:bg-white/5 transition-all group-hover:border-gray-300 dark:group-hover:border-white/20 group-active:scale-[0.99]">
                 <div className="flex items-center justify-between mb-2.5">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">{room.icon}</span>
                     <div>
-                      <h2 className="text-[15px] font-semibold text-gray-900">{room.name}</h2>
-                      <p className="text-xs text-gray-400">{actioned}/{total} items</p>
+                      <h2 className="text-[15px] font-semibold text-gray-900 dark:text-gray-100">{room.name}</h2>
+                      <p className="text-xs text-gray-400 dark:text-gray-500">{actioned}/{total} items</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className={`text-sm font-semibold tabular-nums ${pct === 100 ? "text-emerald-600" : "text-gray-900"}`}>
+                    <span className={`text-sm font-semibold tabular-nums ${pct === 100 ? "text-emerald-600 dark:text-emerald-400" : "text-gray-900 dark:text-gray-100"}`}>
                       {pct}%
                     </span>
-                    <svg className="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-gray-300 dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
                 </div>
-                <div className="w-full bg-gray-100 rounded-full h-1.5">
+                <div className="w-full bg-gray-100 dark:bg-white/10 rounded-full h-1.5">
                   <div
-                    className={`h-1.5 rounded-full transition-all duration-500 ${pct === 100 ? "bg-emerald-500" : "bg-gray-900"}`}
+                    className={`h-1.5 rounded-full transition-all duration-500 ${pct === 100 ? "bg-emerald-500" : "bg-gray-900 dark:bg-white"}`}
                     style={{ width: `${pct}%` }}
                   />
                 </div>
@@ -110,12 +110,12 @@ export default function Home() {
 
       {/* Stats Link */}
       <Link href="/stats" className="block group">
-        <div className="border border-gray-200 rounded-xl p-4 bg-white flex items-center justify-between transition-all group-hover:border-gray-300 group-active:scale-[0.99]">
+        <div className="border border-gray-200 dark:border-white/10 rounded-xl p-4 bg-white dark:bg-white/5 flex items-center justify-between transition-all group-hover:border-gray-300 dark:group-hover:border-white/20 group-active:scale-[0.99]">
           <div className="flex items-center gap-3">
             <span className="text-2xl">📊</span>
-            <span className="text-[15px] font-semibold text-gray-900">My Stats</span>
+            <span className="text-[15px] font-semibold text-gray-900 dark:text-gray-100">My Stats</span>
           </div>
-          <svg className="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 text-gray-300 dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </div>

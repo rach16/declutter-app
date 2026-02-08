@@ -27,10 +27,19 @@ export interface Rooms {
 }
 
 export const COLOR_MAP: Record<ItemColor, { hex: string; label: string; bg: string; border: string; text: string }> = {
-  red: { hex: "#DC3545", label: "TRASH", bg: "bg-red-50", border: "border-red-400", text: "text-red-600" },
-  orange: { hex: "#FD7E14", label: "DECIDE", bg: "bg-orange-50", border: "border-orange-400", text: "text-orange-600" },
-  blue: { hex: "#0D6EFD", label: "DONATE", bg: "bg-blue-50", border: "border-blue-400", text: "text-blue-600" },
-  green: { hex: "#28A745", label: "KEEP", bg: "bg-green-50", border: "border-green-400", text: "text-green-600" },
+  red: { hex: "#DC3545", label: "TRASH", bg: "bg-red-50", border: "border-red-300", text: "text-red-600" },
+  orange: { hex: "#F59E0B", label: "DECIDE", bg: "bg-amber-50", border: "border-amber-300", text: "text-amber-600" },
+  blue: { hex: "#3B82F6", label: "DONATE", bg: "bg-blue-50", border: "border-blue-300", text: "text-blue-600" },
+  green: { hex: "#22C55E", label: "KEEP", bg: "bg-emerald-50", border: "border-emerald-300", text: "text-emerald-600" },
+};
+
+import type { ItemAction } from "@/hooks/useLocalStorage";
+
+export const ACTION_CONFIG: Record<ItemAction, { label: string; icon: string; bg: string; activeBg: string; text: string; hex: string }> = {
+  trash: { label: "Trash", icon: "🗑", bg: "bg-red-50 border-red-200", activeBg: "bg-red-500", text: "text-red-700", hex: "#EF4444" },
+  donate: { label: "Donate", icon: "📦", bg: "bg-blue-50 border-blue-200", activeBg: "bg-blue-500", text: "text-blue-700", hex: "#3B82F6" },
+  keep: { label: "Keep", icon: "✓", bg: "bg-emerald-50 border-emerald-200", activeBg: "bg-emerald-500", text: "text-emerald-700", hex: "#22C55E" },
+  skip: { label: "Skip", icon: "—", bg: "bg-gray-50 border-gray-200", activeBg: "bg-gray-400", text: "text-gray-600", hex: "#9CA3AF" },
 };
 
 export const rooms: Rooms = {

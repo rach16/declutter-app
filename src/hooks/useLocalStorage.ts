@@ -2,18 +2,23 @@
 
 import { useState, useEffect, useCallback } from "react";
 
-const STORAGE_KEY = "declutter-app-checked";
+const ACTIONS_KEY = "declutter-app-actions";
 const BAGS_KEY = "declutter-app-bags";
 
-export function useCheckedItems() {
-  const [checkedItems, setCheckedItems] = useState<Set<string>>(new Set());
+export type ItemAction = "trash" | "donate" | "keep" | "skip";
+
+// Maps item ID -> action taken by user
+export type ItemActions = Record<string, ItemAction>;
+
+export function useItemActions() {
+  const [actions, setActions] = useState<ItemActions>({});
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     try {
-      const stored = localStorage.getItem(STORAGE_KEY);
+      const stored = localStorage.getItem(ACTIONS_KEY);
       if (stored) {
-        setCheckedItems(new Set(JSON.parse(stored)));
+        setActions(JSON.parse(stored));
       }
     } catch {
       // ignore
@@ -23,32 +28,43 @@ export function useCheckedItems() {
 
   useEffect(() => {
     if (loaded) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(checkedItems)));
+      localStorage.setItem(ACTIONS_KEY, JSON.stringify(actions));
     }
-  }, [checkedItems, loaded]);
+  }, [actions, loaded]);
 
-  const toggleItem = useCallback((id: string) => {
-    setCheckedItems((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
-        next.add(id);
-      }
+  const setItemAction = useCallback((id: string, action: ItemAction) => {
+    setActions((prev) => ({ ...prev, [id]: action }));
+  }, []);
+
+  const clearItemAction = useCallback((id: string) => {
+    setActions((prev) => {
+      const next = { ...prev };
+      delete next[id];
       return next;
     });
   }, []);
 
-  const isChecked = useCallback(
-    (id: string) => checkedItems.has(id),
-    [checkedItems]
+  const getItemAction = useCallback(
+    (id: string): ItemAction | undefined => actions[id],
+    [actions]
+  );
+
+  const isActioned = useCallback(
+    (id: string) => id in actions,
+    [actions]
   );
 
   const resetAll = useCallback(() => {
-    setCheckedItems(new Set());
+    setActions({});
   }, []);
 
-  return { checkedItems, toggleItem, isChecked, resetAll, loaded };
+  const actionCounts = useCallback(() => {
+    const counts = { trash: 0, donate: 0, keep: 0, skip: 0 };
+    Object.values(actions).forEach((a) => { counts[a]++; });
+    return counts;
+  }, [actions]);
+
+  return { actions, setItemAction, clearItemAction, getItemAction, isActioned, resetAll, actionCounts, loaded };
 }
 
 export function useBags() {

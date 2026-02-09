@@ -1339,6 +1339,203 @@ export const rooms: Rooms = {
       },
     ],
   },
+  makeup: {
+    name: "Makeup & Cosmetics",
+    icon: "\u{1F484}",
+    sections: [
+      {
+        name: "Eye Products",
+        subsections: [
+          {
+            name: "Mascara (EXPIRES: 3 months opened, 2 years unopened)",
+            items: [
+              { id: "mk-eye-1", text: "Mascara opened 3+ months ago (bacteria risk!)", color: "red" },
+              { id: "mk-eye-2", text: "Clumpy, dry, or flaky mascara", color: "red" },
+              { id: "mk-eye-3", text: "Mascara that smells off or irritates eyes", color: "red" },
+              { id: "mk-eye-4", text: "Unopened mascara older than 2 years", color: "orange" },
+              { id: "mk-eye-5", text: "Your current daily mascara (under 3 months)", color: "green" },
+            ],
+          },
+          {
+            name: "Eyeliner (Liquid: 3-6 mo, Pencil: 1-2 yr opened)",
+            items: [
+              { id: "mk-eye-6", text: "Liquid eyeliner older than 6 months", color: "red" },
+              { id: "mk-eye-7", text: "Eyeliner that skips, drags, or is dried out", color: "red" },
+              { id: "mk-eye-8", text: "Pencil eyeliner older than 2 years", color: "red" },
+              { id: "mk-eye-9", text: "Eyeliner that irritates your eyes", color: "red" },
+              { id: "mk-eye-10", text: "Eyeliner colors you never wear", color: "blue" },
+              { id: "mk-eye-11", text: "Your go-to eyeliners (fresh)", color: "green" },
+            ],
+          },
+          {
+            name: "Eyeshadow (Powder: 2 yr, Cream: 6-12 mo opened)",
+            items: [
+              { id: "mk-eye-12", text: "Powder eyeshadow with hard pan (no pigment)", color: "red" },
+              { id: "mk-eye-13", text: "Cream eyeshadow older than 12 months", color: "red" },
+              { id: "mk-eye-14", text: "Eyeshadow palettes you never reach for", color: "blue" },
+              { id: "mk-eye-15", text: "Duplicate neutral palettes (pick your favorite)", color: "orange" },
+              { id: "mk-eye-16", text: "Shattered or crumbling shadows", color: "red" },
+              { id: "mk-eye-17", text: "Colors that don't suit your skin tone", color: "blue" },
+              { id: "mk-eye-18", text: "Dried, cracked, or smells-off cream shadows", color: "red" },
+              { id: "mk-eye-19", text: "2-3 palettes you love and use", color: "green" },
+              { id: "mk-eye-20", text: "Single shadows you reach for often", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Face Products",
+        subsections: [
+          {
+            name: "Foundation & Concealer (Liquid: 6-12 mo, Powder: 2 yr)",
+            items: [
+              { id: "mk-face-1", text: "Foundation that has separated (oil on top)", color: "red" },
+              { id: "mk-face-2", text: "Foundation that oxidizes or turns orange on skin", color: "red" },
+              { id: "mk-face-3", text: "Foundation in the wrong shade (too dark/light)", color: "blue" },
+              { id: "mk-face-4", text: "Liquid foundation older than 12 months", color: "red" },
+              { id: "mk-face-5", text: "Concealer that's thick, cakey, or changed color", color: "red" },
+              { id: "mk-face-6", text: "Concealer older than 12 months", color: "orange" },
+              { id: "mk-face-7", text: "Foundation samples you tried and didn't like", color: "red" },
+              { id: "mk-face-8", text: "Your current foundation match", color: "green" },
+              { id: "mk-face-9", text: "Your daily concealer (fresh)", color: "green" },
+            ],
+          },
+          {
+            name: "Powder Products (Setting powder, Blush, Bronzer: 2 yr)",
+            items: [
+              { id: "mk-face-10", text: "Setting powder that's caked or hard", color: "red" },
+              { id: "mk-face-11", text: "Setting powder with changed color", color: "red" },
+              { id: "mk-face-12", text: "Powder blush with hard pan (no pigment)", color: "red" },
+              { id: "mk-face-13", text: "Cream blush older than 12 months", color: "red" },
+              { id: "mk-face-14", text: "Bronzer with no shimmer or pigment left", color: "red" },
+              { id: "mk-face-15", text: "Highlighter that's hard pan", color: "red" },
+              { id: "mk-face-16", text: "Blush colors you never wear", color: "blue" },
+              { id: "mk-face-17", text: "Your daily blush, bronzer, and highlighter", color: "green" },
+              { id: "mk-face-18", text: "Setting powder you use (under 2 years)", color: "green" },
+            ],
+          },
+          {
+            name: "Primer & Setting Spray (Primer: 1 yr, Spray: 1-2 yr)",
+            items: [
+              { id: "mk-face-19", text: "Primer older than 1 year (pills, separates, smells off)", color: "red" },
+              { id: "mk-face-20", text: "Setting spray that separates or clogs", color: "red" },
+              { id: "mk-face-21", text: "Setting spray older than 2 years", color: "orange" },
+              { id: "mk-face-22", text: "Primers that broke you out or didn't work", color: "red" },
+              { id: "mk-face-23", text: "Your current primer (under 1 year)", color: "green" },
+              { id: "mk-face-24", text: "Your current setting spray", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Lip Products",
+        subsections: [
+          {
+            name: "Lipstick & Lip Liner (Lipstick: 1-2 yr, Liner: 1-2 yr)",
+            items: [
+              { id: "mk-lip-1", text: "Lipstick that smells waxy, crayon-like, or off", color: "red" },
+              { id: "mk-lip-2", text: "Lipstick with changed texture (gritty, sweating)", color: "red" },
+              { id: "mk-lip-3", text: "Lipstick older than 2 years", color: "red" },
+              { id: "mk-lip-4", text: "Lip liner that's dry, crumbly, hard to apply", color: "red" },
+              { id: "mk-lip-5", text: "Lip colors that don't suit you", color: "blue" },
+              { id: "mk-lip-6", text: "Trendy lip colors from years ago you won't wear", color: "blue" },
+              { id: "mk-lip-7", text: "Duplicate shades (keep your favorite formula)", color: "orange" },
+              { id: "mk-lip-8", text: "Lipsticks you wear regularly", color: "green" },
+              { id: "mk-lip-9", text: "Your everyday lip liner", color: "green" },
+            ],
+          },
+          {
+            name: "Lip Gloss & Liquid Lips (Gloss: 1 yr, Liquid: 1-2 yr)",
+            items: [
+              { id: "mk-lip-10", text: "Lip gloss that's thick, sticky, or gloopy", color: "red" },
+              { id: "mk-lip-11", text: "Lip gloss that smells off", color: "red" },
+              { id: "mk-lip-12", text: "Lip gloss older than 1 year", color: "orange" },
+              { id: "mk-lip-13", text: "Liquid lipstick that's dried out or crumbles", color: "red" },
+              { id: "mk-lip-14", text: "Liquid lips with a doe foot that's gunky", color: "red" },
+              { id: "mk-lip-15", text: "Lip glosses you never reach for", color: "blue" },
+              { id: "mk-lip-16", text: "Your go-to lip gloss (fresh)", color: "green" },
+            ],
+          },
+          {
+            name: "Lip Care",
+            items: [
+              { id: "mk-lip-17", text: "Lip balm that's old, melted, or gritty", color: "red" },
+              { id: "mk-lip-18", text: "Lip scrubs that are dried out", color: "red" },
+              { id: "mk-lip-19", text: "Lip masks older than 1 year", color: "orange" },
+              { id: "mk-lip-20", text: "Too many lip balms (keep 2-3)", color: "orange" },
+              { id: "mk-lip-21", text: "Your daily lip balm", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Brows",
+        subsections: [
+          {
+            name: "Brow Products",
+            items: [
+              { id: "mk-brow-1", text: "Brow pencil that's dried out or hard", color: "red" },
+              { id: "mk-brow-2", text: "Brow gel that's clumpy or dried", color: "red" },
+              { id: "mk-brow-3", text: "Brow pomade that's hard and cracking", color: "red" },
+              { id: "mk-brow-4", text: "Brow products in the wrong shade", color: "blue" },
+              { id: "mk-brow-5", text: "Duplicate brow products", color: "orange" },
+              { id: "mk-brow-6", text: "Your daily brow product", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Tools & Brushes",
+        subsections: [
+          {
+            name: "Brushes & Sponges",
+            items: [
+              { id: "mk-tool-1", text: "Makeup sponges older than 3 months", color: "red" },
+              { id: "mk-tool-2", text: "Sponges that are stained, torn, or won't clean", color: "red" },
+              { id: "mk-tool-3", text: "Brushes that shed or have lost their shape", color: "red" },
+              { id: "mk-tool-4", text: "Brushes with broken or loose handles", color: "red" },
+              { id: "mk-tool-5", text: "Brushes you never use", color: "blue" },
+              { id: "mk-tool-6", text: "Duplicate brushes (keep your favorites)", color: "orange" },
+              { id: "mk-tool-7", text: "Dirty brushes (clean them or toss!)", color: "orange" },
+              { id: "mk-tool-8", text: "Clean brushes you use regularly", color: "green" },
+              { id: "mk-tool-9", text: "Fresh makeup sponge (under 3 months)", color: "green" },
+            ],
+          },
+          {
+            name: "Tools & Accessories",
+            items: [
+              { id: "mk-tool-10", text: "Eyelash curler with worn rubber pad", color: "red" },
+              { id: "mk-tool-11", text: "Broken compact mirrors", color: "red" },
+              { id: "mk-tool-12", text: "Dried-up brush cleaner", color: "red" },
+              { id: "mk-tool-13", text: "Old makeup bags (stained, broken zipper)", color: "red" },
+              { id: "mk-tool-14", text: "False lashes that are worn out or crusty", color: "red" },
+              { id: "mk-tool-15", text: "Lash glue older than 6 months", color: "red" },
+              { id: "mk-tool-16", text: "Sharpeners clogged with old product", color: "orange" },
+              { id: "mk-tool-17", text: "Working eyelash curler", color: "green" },
+              { id: "mk-tool-18", text: "Clean makeup bag", color: "green" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Skincare in Makeup Bag",
+        subsections: [
+          {
+            name: "Makeup-Adjacent Skincare",
+            items: [
+              { id: "mk-skin-1", text: "Makeup remover that's old or irritating", color: "red" },
+              { id: "mk-skin-2", text: "Micellar water older than 12 months", color: "orange" },
+              { id: "mk-skin-3", text: "Face mist/spray that smells off", color: "red" },
+              { id: "mk-skin-4", text: "Blotting papers you never use", color: "orange" },
+              { id: "mk-skin-5", text: "Makeup wipes (consider reusable pads instead)", color: "orange" },
+              { id: "mk-skin-6", text: "Your current makeup remover", color: "green" },
+              { id: "mk-skin-7", text: "Fresh blotting papers or setting products", color: "green" },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 };
 
 export function getAllItems(roomId: string): Item[] {
